@@ -194,6 +194,25 @@ html{
 }
 
 .footer{
-  background-color: cadetblue;
   flex-basis: 100%;
+  background-color: $main-color;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 4rem 0;
+  .sm-links{
+    flex-basis: 30%;
+  }
+}
+
+.sm-links{
+  &__title{
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+  &__item{
+    text-indent: 2rem;
+    font-size: 1.8rem;
+  }
 }
