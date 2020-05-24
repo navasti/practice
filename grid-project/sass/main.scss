@@ -1,0 +1,65 @@
+$default-font: arial, sans-serif;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 10px;
+  font-family: $default-font;
+}
+
+.grid{
+  display: grid;
+  grid-template-columns: minmax(120px, 200px) minmax(240px, 1fr) 80px;
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-areas: 
+  'logo search menu'
+  'gallery gallery gallery'
+  'contact contact contact'
+  'footer footer footer';
+  min-height: 100vh;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.logo{
+  background-color: #a3bf1a;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  height: 80px;
+}
+
+.search{
+  grid-column: 2/3;
+  grid-row: 1/2;
+  background-color: #2bc6af;
+}
+
+.menu{
+  grid-column: -1/-2;
+  grid-row: 1;
+  background-color: #9aca9a;
+}
+
+.gallery{
+  grid-column: 1/-1;
+  grid-row: 2;
+  background-color: #997aaa;
+}
+
+.contact{
+  grid-area: 3/1/4/-1;
+  height: 60px;
+  background-color: #5d899b;
+}
+
+.footer{
+  grid-area: footer;
+  height: 100px;
+  background-color: #ce727a;
+}
