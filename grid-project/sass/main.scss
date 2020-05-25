@@ -11,6 +11,17 @@ html{
   font-family: $default-font;
 }
 
+.logo,
+.search,
+.menu,
+.contact,
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
 .grid{
   display: grid;
   grid-template-columns: minmax(120px, 200px) minmax(240px, 1fr) 80px;
@@ -21,39 +32,95 @@ html{
   'contact contact contact'
   'footer footer footer';
   min-height: 100vh;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
   max-width: 1240px;
   margin: 0 auto;
+  @media(min-width: 1024px){
+    grid-template-columns: minmax(300px, auto) 1fr;
+    grid-template-rows: auto auto auto 1fr auto auto;
+    grid-template-areas: 
+    'logo gallery'
+    'menu gallery'
+    'search gallery'
+    'unallocated gallery'
+    'contact gallery'
+    'footer footer';
+  }
 }
 
 .logo{
-  background-color: #a3bf1a;
   grid-column-start: 1;
   grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 2;
   height: 80px;
+  background-color: #a3bf1a;
+  @media(min-width: 1024px){
+    grid-area: logo;
+  }
 }
 
 .search{
-  grid-column: 2/3;
-  grid-row: 1/2;
+  grid-area: search;
   background-color: #2bc6af;
+  @media(min-width: 1024px){
+    min-height: 80px;
+  }
 }
 
 .menu{
-  grid-column: -1/-2;
-  grid-row: 1;
+  grid-area: menu;
+  // grid-column: -1/-2;
+  // grid-row: 1;
   background-color: #9aca9a;
+  @media(min-width: 1024px){
+    min-height: 300px;
+  }
 }
 
 .gallery{
-  grid-column: 1/-1;
-  grid-row: 2;
+  grid-area: gallery;
+  // grid-column: 1/-1;
+  // grid-row: 2;
   background-color: #997aaa;
+  color: #fff;
+  letter-spacing: 1px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(205px, 1fr));
+  gap: 15px;
+  padding: 105px 15px 15px 15px;
+  position: relative;
+  img{
+    width: 100%;
+  }
+  h1{
+    position: absolute;
+    top: 30px;
+    font-size: 3.2rem;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0,0,0,.3);
+  }
+}
+
+.unallocated{
+  display: none;
+  color: #fff;
+  background-color: #a586b6;
+  @media(min-width: 1024px){
+    grid-area: unallocated;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.8rem;
+  }
 }
 
 .contact{
-  grid-area: 3/1/4/-1;
+  grid-area: contact;
+  // grid-area: 3/1/4/-1;
   height: 60px;
   background-color: #5d899b;
 }
