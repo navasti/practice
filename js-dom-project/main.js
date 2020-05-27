@@ -1,4 +1,3 @@
-
 // Adding element
 const addElement = (e, node, text, attribute, value) => {
   e.preventDefault();
@@ -19,17 +18,32 @@ const addElement = (e, node, text, attribute, value) => {
 const searchElements = (e, element) => {
   e.preventDefault();
   const infoElement = document.querySelector('.result');
+  infoElement.textContent = '';
   const elements = [...document.querySelectorAll(element)];
   if (elements.length > 0) {
-    infoElement.innerHTML = `<p class="result__info">${elements.length} ${element} elements found</p>`;
+    infoElement.innerHTML = `<p class="result__count-info">${elements.length} <strong>${element}</strong> element(s) found</p>`;
     showInfo(elements, infoElement);
   } else {
-    infoElement.innerHTML = `<p class="result__info">Haven't found any of ${element} elements</p>`;
+    infoElement.innerHTML = `<p class="result__info">Haven't found any of <strong>${element}</strong> elements</p>`;
     return;
   };
 };
 
-const showInfo = (elements, info) => { console.log(elements), console.log(info) };
+// Displaying found elements
+const showInfo = (elements, info) => {
+  elements.forEach(element => {
+    const item = document.createElement('div');
+    item.className = 'result__element-description';
+    item.innerHTML = `
+      <div>${element.nodeName}</div>
+      <div>classes: ${element.className}</div>
+      <div>height: ${element.offsetHeight}</div>
+      <div>width: ${element.offsetWidth}</div>
+      <div>children: ${element.childElementCount}</div>
+    `;
+    info.appendChild(item);
+  });
+};
 
 // forms
 const addForm = document.querySelector('.form--add');
