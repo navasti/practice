@@ -9,7 +9,7 @@ class Scroller {
     this.drawNavigation();
   };
 
-  isScrolledIntoView = element => {
+  isScrolledIntoView(element) {
     const rect = element.getBoundingClientRect();
     const elementTop = rect.top;
     const elementBottom = Math.floor(rect.bottom);
@@ -17,7 +17,7 @@ class Scroller {
     return isVisivble;
   };
 
-  listenScroll = (event) => {
+  listenScroll(event) {
     if (this.isThrottled) return;
     this.isThrottled = true;
     setTimeout(() => {
@@ -27,7 +27,7 @@ class Scroller {
     this.scroll(direction);
   };
 
-  scroll = (direction) => {
+  scroll(direction) {
     if (direction === 1) {
       const isLastSection = this.currentSectionIndex === this.sections.length - 1;
       if (isLastSection) return;
@@ -39,7 +39,7 @@ class Scroller {
     this.scrollToCurrentSection();
   };
 
-  scrollToCurrentSection = () => {
+  scrollToCurrentSection() {
     this.selectActiveNavItem();
     this.sections[this.currentSectionIndex].scrollIntoView({
       behavior: 'smooth',
@@ -47,7 +47,7 @@ class Scroller {
     });
   };
 
-  drawNavigation = () => {
+  drawNavigation() {
     this.navigationContainer = document.createElement('aside');
     this.navigationContainer.setAttribute('class', 'scroller-navigation');
     const list = document.createElement('ul');
@@ -64,7 +64,7 @@ class Scroller {
     this.selectActiveNavItem();
   };
 
-  selectActiveNavItem = () => {
+  selectActiveNavItem() {
     if (this.navigationContainer) {
       const navigationItems = this.navigationContainer.querySelectorAll('li');
       navigationItems.forEach((item, index) => {
