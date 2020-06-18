@@ -1,5 +1,5 @@
 {
-  "name": "sliding-img",
+  "name": "slider-project",
   "version": "1.0.0",
   "author": "",
   "description": "Minimal webpack boilerplate",
@@ -15,6 +15,11 @@
     "sass"
   ],
   "license": "ISC",
+  "dependencies": {
+    "braces": ">=2.3.1",
+    "serialize-javascript": ">=2.1.1",
+    "minimist": ">=0.2.1"
+  },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
