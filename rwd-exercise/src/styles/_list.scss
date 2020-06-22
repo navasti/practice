@@ -1,0 +1,9 @@
+ul {
+   list-style: none;
+   margin-bottom: $main-spacing;
+   li {
+      margin-bottom: $main-spacing / 2;
+      padding-bottom: $main-spacing / 2;
+      border-bottom: 1px solid $color-primary;
+   }
+}
