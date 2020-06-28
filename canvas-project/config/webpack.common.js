@@ -20,7 +20,7 @@ module.exports = {
       },
     ]),
     new HtmlWebpackPlugin({
-      title: 'Webpack Boilerplate',
+      title: 'Canvas Project',
       favicon: paths.static + '/favicon.png',
       template: paths.src + '/index.html',
       filename: 'index.html',

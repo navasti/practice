@@ -1,8 +1,5 @@
-import { HelloCanvas } from './js/HelloCanvas'
 import './styles/index.scss'
+import Sky from './js/Sky'
 
-const greeting = document.createElement('h1')
-greeting.textContent = HelloCanvas()
-
-const app = document.querySelector('#root')
-app.append(greeting)
+const sky = new Sky(document.querySelector('#canvas'))
+sky.run()
