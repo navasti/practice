@@ -157,15 +157,20 @@
          return tl
       }
 
-      const move = () => {
+      const move = legs => {
          const tl = gsap.timeline()
+
+         tl.to(legs, .5, { y: -60, ease: Power0.easeNone, stagger: { each: 0.5, repeat: -1, yoyo: true } })
+
          return tl
       }
 
 
       // Master
       const master = gsap.timeline()
-      master.add(bars())
+      master.add('start')
+      master.add(bars(), 'start')
+      master.add(move(document.querySelectorAll('#leg-right, #leg-left')), 'start');
 
    </script>
 </body>
