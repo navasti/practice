@@ -153,7 +153,16 @@
       }
 
       const blink = () => {
-         const tl = gsap.timeline()
+         const tl = gsap.timeline({ repeat: -1, repeatDelay: 3, delay: 2 })
+
+         const eyes = document.querySelectorAll('#eye-left, #eye-right')
+         tl
+            .set(eyes, { transformOrigin: "50% 50%" })
+            .to(eyes, .1, { scaleY: 0, fill: "#231f20" })
+            .to(eyes, .05, { scaleY: 1, fill: "#48b3e6" })
+            .to(eyes, .1, { scaleY: 0, fill: "#231f20" }, "+=0.5")
+            .to(eyes, .05, { scaleY: 1, fill: "#48b3e6" })
+
          return tl
       }
 
@@ -165,13 +174,12 @@
          return tl
       }
 
-
-      // Master
+      // Master Timeline
       const master = gsap.timeline()
       master.add('start')
       master.add(bars(), 'start')
+      master.add(blink(), 'start')
       master.add(move(document.querySelectorAll('#leg-right, #leg-left')), 'start');
-
    </script>
 </body>
 
