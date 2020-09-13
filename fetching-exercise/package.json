@@ -16,6 +16,7 @@
   ],
   "license": "ISC",
   "devDependencies": {
+    "yargs-parser": ">=13.1.2",
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
