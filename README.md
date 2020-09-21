@@ -1,6 +1,12 @@
-### Two simple projects in which I practiced flexbox and css grid.
+## Practice
+This repository contains a collection of projects that have been developed through practical learning. Most of the projects are part of an online course or tutorial.
 
-### Techniques:
-* Flexbox
-* CSS Grid
-* SCSS - Media Queries and BEM
+## Used Technologies/Techniques
+* CANVAS
+* BEM
+* BOOTSTRAP
+* RWD
+* FETCHING DATA
+* CSS & SCSS
+* GRID & FLEXBOX
+* GSAP & JS ANIMATIONS
